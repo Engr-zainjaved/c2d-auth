@@ -9,6 +9,7 @@ class AutoLogin(http.Controller):
         if session_id:
             response = redirect('/web')
             response.set_cookie('session_id', session_id, path='/', httponly=True)
+            sleep(0.1)
             return response
 
         return redirect('/web/login')
